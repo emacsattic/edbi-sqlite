@@ -1,12 +1,11 @@
-Edbi Sqlite3
-============
+Edbi Sqlite
+===========
 
-Open sqlite3 files with edbi
+Open sqlite files with edbi
 
 Usage
 -----
 
-Run ``edbi-sqlite3`` interactive command.  Select appropriate sqlite3
+Run ``edbi-sqlite`` interactive command.  Select appropriate sqlite
 database file.  Type RET and you'll be connected to specified
 database with ``edbi`` tool.
-

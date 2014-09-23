@@ -1,9 +1,9 @@
-;;; edbi-sqlite3.el --- Open sqlite3 files with edbi
+;;; edbi-sqlite.el --- Open sqlite files with edbi
 
 ;; Copyright (C) 2014 by Malyshev Artem
 
 ;; Author: Malyshev Artem <proofit404@gmail.com>
-;; URL: https://github.com/proofit404/edbi-sqlite3
+;; URL: https://github.com/proofit404/edbi-sqlite
 ;; Version: 1.0.0
 ;; Package-Requires: ((emacs "24") (edbi "0.1.3"))
 
@@ -22,7 +22,7 @@
 
 ;;; Commentary:
 
-;; Run `edbi-sqlite3' interactive command.  Select appropriate sqlite3
+;; Run `edbi-sqlite' interactive command.  Select appropriate sqlite
 ;; database file.  Type RET and you'll be connected to specified
 ;; database with `edbi' tool.
 
@@ -31,15 +31,15 @@
 (require 'edbi)
 
 ;;;###autoload
-(defun edbi-sqlite3 (file)
-  "Open sqlite3 FILE with `edbi'."
-  (interactive (list (read-file-name "SQLite3: ")))
+(defun edbi-sqlite (file)
+  "Open sqlite FILE with `edbi'."
+  (interactive (list (read-file-name "SQLite: ")))
   (let* ((uri (format "dbi:SQLite:dbname=%s" (file-truename file)))
          (data-source (edbi:data-source uri nil nil))
          (conn (edbi:start)))
     (edbi:connect conn data-source)
     (edbi:dbview-open conn)))
 
-(provide 'edbi-sqlite3)
+(provide 'edbi-sqlite)
 
-;;; edbi-sqlite3.el ends here
+;;; edbi-sqlite.el ends here

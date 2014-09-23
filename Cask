@@ -1,3 +1,3 @@
 (source melpa)
 
-(package-file "edbi-sqlite3.el")
+(package-file "edbi-sqlite.el")
